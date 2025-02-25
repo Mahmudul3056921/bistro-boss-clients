@@ -1,7 +1,8 @@
-import React from "react";
 import Banner from "./Banner/Banner";
 import Category from "./Category";
 import PopularMenu from "../Shared/PopularMenu/PopularMenu";
+import FeaturedItem from "./FeaturedItem/FeaturedItem";
+import Testimonials from "./Testimonial/Testimonials";
 
 export const Home = () => {
   return (
@@ -9,6 +10,8 @@ export const Home = () => {
       <Banner></Banner>
       <Category></Category>
       <PopularMenu></PopularMenu>
+      <FeaturedItem></FeaturedItem>
+      <Testimonials></Testimonials>
     </div>
   );
 };

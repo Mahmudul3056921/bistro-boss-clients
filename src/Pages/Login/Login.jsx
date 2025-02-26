@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../ProvidersAuth/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const Login = () => {
     signIn(email, password).then((result) => {
       const user = result.user;
       console.log(user);
+      Swal.fire("SweetAlert2 is working!");
     });
   };
   return (

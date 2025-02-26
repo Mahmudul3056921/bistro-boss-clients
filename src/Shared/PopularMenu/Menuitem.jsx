@@ -2,7 +2,7 @@ const Menuitem = ({ item }) => {
   const { name, image, recipe, price } = item;
 
   return (
-    <div className="flex space-x-3 ">
+    <div className="flex space-x-3">
       <div>
         <img
           style={{ borderRadius: "0 200px 200px 200px" }}

@@ -4,7 +4,9 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 
 const Main = () => {
-  const noHeaderFooter = useLocation().pathname.includes("login");
+  const location = useLocation();
+  const noHeaderFooter =
+    location.pathname.includes("login") || location.pathname.includes("signup");
   return (
     <div>
       {noHeaderFooter || <Navbar></Navbar>}

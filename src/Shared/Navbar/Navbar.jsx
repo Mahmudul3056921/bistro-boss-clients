@@ -72,6 +72,9 @@ const Navbar = () => {
           <li>
             <Link to={"/order/dessert"}>Order</Link>
           </li>
+          <li>
+            <Link to={"/secret"}>Secret</Link>
+          </li>
 
           {user ? (
             <button className="btn" onClick={handleLogout}>

@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../ProvidersAuth/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
-
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -17,6 +18,14 @@ const SignUp = () => {
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      updateUserProfile(data.name, data.photourl)
+        .then(() => {
+          console.log("user info updated");
+
+          Swal.fire("SweetAlert2 is working!");
+          navigate("/");
+        })
+        .catch((error) => console.log(error));
     });
   };
 
@@ -44,6 +53,19 @@ const SignUp = () => {
                 className="input input-bordered"
                 required
                 {...register("name")}
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">PhotoURL</span>
+              </label>
+              <input
+                type="text"
+                name="photourl"
+                placeholder="photourl"
+                className="input input-bordered"
+                required
+                {...register("photourl")}
               />
             </div>
             <div className="form-control">

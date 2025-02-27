@@ -77,9 +77,21 @@ const Navbar = () => {
           </li>
 
           {user ? (
-            <button className="btn" onClick={handleLogout}>
-              Logout
-            </button>
+            <>
+              <span>{user?.displayName}</span>
+
+              <div className="avatar-group -space-x-6 rtl:space-x-reverse">
+                <div className="avatar">
+                  <div className="w-12">
+                    <img src={user?.photoURL} />
+                  </div>
+                </div>
+              </div>
+
+              <button className="btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </>
           ) : (
             <Link to={"/login"} className="btn">
               Login

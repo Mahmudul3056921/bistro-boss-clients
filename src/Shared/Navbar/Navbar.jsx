@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../ProvidersAuth/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -78,7 +79,12 @@ const Navbar = () => {
 
           {user ? (
             <>
-              <span>{user?.displayName}</span>
+              <li>
+                <button className="">
+                  <FaShoppingCart></FaShoppingCart>
+                  <div className="badge badge-secondary">+99</div>
+                </button>
+              </li>
 
               <div className="avatar-group -space-x-6 rtl:space-x-reverse">
                 <div className="avatar">
@@ -88,14 +94,19 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <button className="btn" onClick={handleLogout}>
-                Logout
-              </button>
+              <li>
+                <button className="" onClick={handleLogout}>
+                  Logout
+                </button>
+              </li>
             </>
           ) : (
-            <Link to={"/login"} className="btn">
-              Login
-            </Link>
+            <li>
+              {" "}
+              <Link to={"/login"} className="">
+                Login
+              </Link>
+            </li>
           )}
         </ul>
       </div>

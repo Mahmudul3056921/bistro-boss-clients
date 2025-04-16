@@ -81,10 +81,10 @@ const Navbar = () => {
           {user ? (
             <>
               <li>
-                <button className="">
+                <Link to="dashboard/cart">
                   <FaShoppingCart></FaShoppingCart>
                   <div className="badge badge-secondary">{carts.length}</div>
-                </button>
+                </Link>
               </li>
 
               <div className="avatar-group -space-x-6 rtl:space-x-reverse">

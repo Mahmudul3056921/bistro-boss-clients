@@ -14,7 +14,7 @@ const Dashboard = () => {
         <h2 className="text-2xl font-bold mb-6 text-center">BISTRO BOSS</h2>
         <ul className="menu space-y-2">
           <li>
-            <Link to="/dashboard/user-home">User Home</Link>
+            <Link to="/">User Home</Link>
           </li>
           <li>
             <Link to="/dashboard/reservation">Reservation</Link>

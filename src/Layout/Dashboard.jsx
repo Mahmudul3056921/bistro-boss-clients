@@ -1,13 +1,14 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useCarts from "../Hooks/useCarts";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
   const [cartItems] = useCarts();
   const totalOrders = cartItems.length;
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
   // TODO : get isAdmin value from the database
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="flex min-h-screen py-20">

@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
     });
 
     return unsubscribe;
-  }, []);
+  }, [axiosPublic]);
 
   const createUser = (email, password) => {
     setLoading(true);

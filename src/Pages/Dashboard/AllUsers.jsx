@@ -24,11 +24,7 @@ const AllUsers = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await axiosSecure.get("/users", {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("access-token")}`,
-        },
-      });
+      const res = await axiosSecure.get("/users");
       return res.data;
     },
   });
@@ -58,7 +54,7 @@ const AllUsers = () => {
                 <tr key={item._id} className="bg-base-200">
                   <th>{index + 1}</th>
                   <td>{item.name}</td>
-                  <td>Quality Control Specialist</td>
+                  <td>{item.email}</td>
                   <td>
                     {item.role === "admin" ? (
                       "Admin"

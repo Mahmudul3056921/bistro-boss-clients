@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <Link to="/dashboard/allusers">All Users</Link>
               </li>
               <li>
-                <Link to="/booking">Manage Bookings</Link>
+                <Link to="/dashboard/manageitem">Manage Bookings</Link>
               </li>
             </>
           ) : (
